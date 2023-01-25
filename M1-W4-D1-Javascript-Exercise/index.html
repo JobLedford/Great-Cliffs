@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <div id="container">
     <head>
         <title>Great Cliffs of California</title>
         <meta charset="utf-8">
@@ -144,56 +143,75 @@
                 background: #125688;
                 color:white;
             }
+            #timeofday {
+                background: linear-gradient(0deg, rgba(251,215,139,1) 0%, rgba(118,213,245,1) 100%);
+                color: #3a3a3a;
+                font-family: Arial, Helvetica, sans-serif;
+            }
         </style>
     </head>
     <body id="home">
-    <header>
-        <div class="main-header">
-            <div class="logo">
-                <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
-            <nav class="main-menu">
-                <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li>Cliffs</li>
-                    <li><a href="activities.html">Events</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+        <div id="container">
+        <header>
+            <div class="main-header">
+            
+                <div class="logo">
+                    <img src="images/logo.png" alt="Great Cliffs Logo" width="125">
+                </div>
+
+                <nav class="main-menu">
+                    <ul>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li>Cliffs</li>
+                        <li><a href="activities.html">Events</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-        </div>
-    </header>
+        </header>
+
+    <section id="timeofday">
+        <span>Your Current Local Time: </span>
+        <span id="clock"></span>
+    </section>
+
     <main>
         <h2>Introducing California's Greatest Cliffs</h2>
+
         <h3>What is so unique about California cliffs?</h3>
+
         <p>California cliffs are on of a kind in the United States where no cliffs are as magnificent and beautiful as them. And California is the only state that can have cliffs that fronts all possible environments: sea, river, mountains, and canyons. There are four such individually unique cliffs: West Cliff, North Cliff, East Cliff, and South Cliff. All offer fantastic overlooking views, recreational areas, camping sites, wildlife watch spots and overnight cabins.</p>
         <h3>Where are these cliffs?</h3>
+
         <p>Located within a 100 mile radius from Irvine, California, they can be reached by roads easily. The closest to Irvine is West Cliff, which is the most popular and most visited.</p>
+        <section>
+            <ul id="partners">
+                <li class="partner">
+                    <img src="images/partners/partner-bustour.png" alt="Partner Bus Tours"/>
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-cabinrental.png" alt="Partner Cabin Rental"/>        
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-campingadv.png" alt="Partner Camping Adventure"/>
+                <li class="partner">
+                    <img src="images/partners/partner-collegetours.png" alt="Partner College Tours"/>
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-rentalbike.png" alt="Partner Bike Rentals"/>
+                </li>
+                <li class="partner">
+                    <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group"/>
+                </li>
+            </ul>
+        </section>
     </main>
-    </body>
-    <section>
-    <ul id="partners">
-        <li class="partner">
-            <img src="images/partners/partner-bustour.png" alt="Partner Bus Tours"/>
-        </li>
-        <li class="partner">
-            <img src="images/partners/partner-cabinrental.png" alt="Partner Cabin Rental"/>        
-        </li>
-        <li class="partner">
-            <img src="images/partners/partner-campingadv.png" alt="Partner Camping Adventure"/>
-        <li class="partner">
-            <img src="images/partners/partner-collegetours.png" alt="Partner College Tours"/>
-        </li>
-        <li class="partner">
-            <img src="images/partners/partner-rentalbike.png" alt="Partner Bike Rentals"/>
-        </li>
-        <li class="partner">
-            <img src="images/partners/partner-tourgroup.png" alt="Partner Tour Group"/>
-        </li>
-    </ul>
-    </section>
+    
     <footer>
         <div id="nondisclaimer">
-            <div class="copy">&copy;</div>
+            <div class="copy">
+                &copy;
+            </div>
             <div class="social">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-instagram"></a>
@@ -203,5 +221,68 @@
         <div id="disclaimer">
             <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
         </div>
+
     </footer>
+    <!--Javascript Codes-->
+    <script>
+        //create a time data function
+        function currentTime() {
+            //Declare variables
+            var d = new Date(); //Get current date
+            var hr = d.getHours(); //Get current hours
+            var min = d.getMinutes(); //Get current minutes
+            var sec = d.getSeconds(); // Get current seconds
+            var ampm; //Declare empty variale to store AM and PM
+            
+            //Add 0 to single digits for seconds
+            if (sec < 10) {
+                sec = "0" + sec;
+            }
+            //Add 0 to single digits for minutes
+            if (min < 10) {
+                min = "0" + min;
+            }
+
+            //Determine AM or PM string
+            if (hr == 12) {
+                ampm = "PM"; //Set to PM
+            } else if (hr > 12) {
+                hr -= 12; //Deduct 12 from hours greater than 12 (military time)
+                ampm = "PM"; //Set to PM
+            } else {
+                ampm = "AM"; //Set to AM
+            }
+
+            //Assemble time format to display
+            var time = hr + ":" + min + ":" + sec + " " + ampm;
+
+            //Display current local time and time zone on HTML elements
+            document.getElementById("clock").innerText = time; //Adding time
+            
+            //Run time data function every 1 second
+            setInterval(currentTime, 1000); //setting timer
+            
+            var utchr = d.getUTCHours(); //Get current Greenwich Mean Time (GMT)
+            var timeDiff = hr - utchr; //To store time difference between GMT hour and local hour
+            var adjTimeDiff = Math.abs(timeDiff); //To store time difference converted to positive number
+            var timeZone; //To store the 4 time zones (PT,MT,CT,ET)
+
+            //Determine timezone
+            if (adjTimeDiff == 6) {
+                timeZone = "CT";
+            } else if (adjTimeDiff == 7) {
+                timeZone = "ET";
+            } else if (adjTimeDiff == 5) {
+                timeZone = "MT";
+            } else if (adjTimeDiff == 4) {
+                timeZone = "PT";
+            } else {
+                timeZone = utchr;
+            }
+        }
+
+        //Intial run of time data function
+        currentTime();
+    </script>
+</body>
 </html>
