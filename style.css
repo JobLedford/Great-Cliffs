@@ -303,5 +303,39 @@ input[type="submit"] {
     padding-top: 10px;
 }
 
-
-
+/* Cliffs */
+#cliff-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    
+}
+#cliff-section img {
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    max-width: 100%;
+}
+#westCliff h4 {
+    background-color: #852b1b;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+#northCliff h4 {
+    background-color: #852b1b;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+#eastCliff h4 {
+    background-color: #852b1b;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
+#southCliff h4 {
+    background-color: #852b1b;
+    color: white;
+    padding: 10px;
+    margin: 0px;
+}
