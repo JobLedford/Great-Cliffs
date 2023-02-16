@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="contact">
+<body id="contact" onLoad="disableButton(true)">
     <div id="container">
         <header>
             <div class="main-header">
@@ -84,12 +84,12 @@
 
                 <!--Random codes-->
                 <div class="randomcode">
-                    <input type="text" name="randomcode" placeholder="Enter characters">
+                    <input type="text" id="codeentered" name="randomcode" placeholder="Enter characters">
                     <p id="codes"></p>
                 </div>
             
                 <div class="button">
-                    <input type="submit" value="Inquire">
+                    <input type="submit" value="Inquire" id="submit">
                 </div> 
             </fieldset>  
             </form>
