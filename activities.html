@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -37,9 +38,9 @@
             <h1>Activities</h1>
             <p>There are many planned activities at all the cliff sites. Some are scheduled daily, weekly, monthly and yearly. These activities are not however run by the state park and recreational department. They are operated and manage by private vendors but are partners with the state department. Therefore, for schedule inquiries or information, please contact them directly. For a list of activities, please refer to the table below:</p>
         
-            <table>
-                <caption>Activities at the Cliffs</caption>
-                <thead>
+            <table id="table">
+                <caption id="caption">Activities at the Cliffs</caption>
+                <thead id="thead">
                     <tr>
                         <td>Activity</td>
                         <td>West Cliff</td>
@@ -48,41 +49,41 @@
                         <td>South Cliff</td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tbody">
                     <tr>
-                        <td>Hiking</td>
-                        <td>College Hikes</td>
-                        <td>Family Fun</td>
-                        <td>Treasure Trails</td>
-                        <td>Canyon Explorer</td>
+                        <td id="category">Hiking</td>
+                        <td id="events">College Hikes</td>
+                        <td id="events">Family Fun</td>
+                        <td id="events">Treasure Trails</td>
+                        <td id="events">Canyon Explorer</td>
                     </tr>
                     <tr>
-                        <td>Kayak</td>
-                        <td>Western Kayak Meetup</td>
-                        <td>Not Available</td>
-                        <td>Youth Kayaking</td>
-                        <td>Kayak Down</td>
+                        <td id="category">Kayak</td>
+                        <td id="events">Western Kayak Meetup</td>
+                        <td id="na">Not Available</td>
+                        <td id="events">Youth Kayaking</td>
+                        <td id="events">Kayak Down</td>
                     </tr>
                     <tr>
-                        <td>Skydiving</td>
-                        <td>Seacliff Diving</td>
-                        <td>Sky is the limit</td>
-                        <td>Not Available</td>
-                        <td>Sky Diving for Beginners</td>
+                        <td id="category">Skydiving</td>
+                        <td id="events">Seacliff Diving</td>
+                        <td id="events">Sky is the limit</td>
+                        <td id="na">Not Available</td>
+                        <td id="events">Sky Diving for Beginners</td>
                     </tr>
                     <tr>
-                        <td>Biking</td>
-                        <td>Bicycle for One</td>
-                        <td>Not Available</td>
-                        <td>Bike Meetup Group</td>
-                        <td>Not Available</td>
+                        <td id="category">Biking</td>
+                        <td id="events">Bicycle for One</td>
+                        <td id="na">Not Available</td>
+                        <td id="events">Bike Meetup Group</td>
+                        <td id="na">Not Available</td>
                     </tr>                
                     <tr>
-                        <td>Camping</td>
-                        <td>Youth Camp</td>
-                        <td>Rent a Tent</td>
-                        <td>Campground Adventure</td>
-                        <td>Sunset Camping</td>
+                        <td id="category">Camping</td>
+                        <td id="events">Youth Camp</td>
+                        <td id="events">Rent a Tent</td>
+                        <td id="events">Campground Adventure</td>
+                        <td id="events">Sunset Camping</td>
                     </tr>
                 </tbody>
             </table>
@@ -125,5 +126,6 @@
    <script src="JavaScript/scripts.js"></script>
    <!--Digital Clock-->
    <script src="JavaScript/digclock.js"></script>
+   <script src="JavaScript/activity.js"></script>
 </body>
 </html>

@@ -200,7 +200,14 @@ td:first-child {
   font-weight: bold;
   background: #8de1ff;
 }
-
+/* Table */
+#events.active {
+    background: #9ed034;
+    color: #fff;
+}
+#events {
+    cursor: pointer;
+}
 /* Contact */
 .contactinfo {
   line-height: 35px;
